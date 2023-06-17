@@ -32,8 +32,21 @@ class ChatController: ObservableObject {
         }
     }
     
+    func getAPIKey() -> String? {
+        var nsDictionary: NSDictionary?
+        if let path = Bundle.main.path(forResource: "Config", ofType: "plist") {
+            nsDictionary = NSDictionary(contentsOfFile: path)
+        }
+
+        return nsDictionary?["OpenAI_API_Key"] as? String
+    }
+    
     func getAutoReply(inputText: String, completion: @escaping (String) -> Void) {
-        let api = ChatGPTAPI(apiKey: "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")
+        guard let apiKey = getAPIKey() else {
+            print("Failed to get API Key")
+            return
+        }
+        let api = ChatGPTAPI(apiKey: apiKey)
         Task {
             do {
                 let response = try await api.sendMessage(text: inputText)

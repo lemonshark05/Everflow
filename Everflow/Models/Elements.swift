@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+struct Information: Identifiable {
+    let id = UUID()
+    let sender: String
+    let infoType: InfoType
+    let isCurrentUser: Bool
+}
+
+enum InfoType {
+    case text(String)
+    case table([String])
+}
+
