@@ -14,6 +14,17 @@
 		D90C9BAE2A3E34A800C5A2DB /* EverflowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90C9BAD2A3E34A800C5A2DB /* EverflowTests.swift */; };
 		D90C9BB82A3E34A800C5A2DB /* EverflowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90C9BB72A3E34A800C5A2DB /* EverflowUITests.swift */; };
 		D90C9BBA2A3E34A800C5A2DB /* EverflowUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90C9BB92A3E34A800C5A2DB /* EverflowUITestsLaunchTests.swift */; };
+		D90C9BC82A3E493A00C5A2DB /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90C9BC72A3E493A00C5A2DB /* Homepage.swift */; };
+		D90C9BCA2A3E497500C5A2DB /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90C9BC92A3E497500C5A2DB /* SignupView.swift */; };
+		D90C9BCC2A3E49B900C5A2DB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90C9BCB2A3E49B900C5A2DB /* LoginView.swift */; };
+		D90C9BCF2A3E4A8500C5A2DB /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90C9BCE2A3E4A8500C5A2DB /* LoginController.swift */; };
+		D90C9BD12A3E4BFA00C5A2DB /* RolePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90C9BD02A3E4BFA00C5A2DB /* RolePageView.swift */; };
+		D90C9BD32A3E4C8300C5A2DB /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90C9BD22A3E4C8300C5A2DB /* UserView.swift */; };
+		D90C9BD52A3E4C9400C5A2DB /* NetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90C9BD42A3E4C9400C5A2DB /* NetworkView.swift */; };
+		D90C9BD72A3E4CA300C5A2DB /* AddBlogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90C9BD62A3E4CA300C5A2DB /* AddBlogView.swift */; };
+		D90C9BD92A3E4CB600C5A2DB /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90C9BD82A3E4CB600C5A2DB /* SettingView.swift */; };
+		D90C9BDB2A3E4CF100C5A2DB /* AssistantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90C9BDA2A3E4CF100C5A2DB /* AssistantView.swift */; };
+		D90C9BE02A3E4D3500C5A2DB /* Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90C9BDF2A3E4D3500C5A2DB /* Elements.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +55,17 @@
 		D90C9BB32A3E34A800C5A2DB /* EverflowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EverflowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90C9BB72A3E34A800C5A2DB /* EverflowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverflowUITests.swift; sourceTree = "<group>"; };
 		D90C9BB92A3E34A800C5A2DB /* EverflowUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverflowUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D90C9BC72A3E493A00C5A2DB /* Homepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepage.swift; sourceTree = "<group>"; };
+		D90C9BC92A3E497500C5A2DB /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		D90C9BCB2A3E49B900C5A2DB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		D90C9BCE2A3E4A8500C5A2DB /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		D90C9BD02A3E4BFA00C5A2DB /* RolePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RolePageView.swift; sourceTree = "<group>"; };
+		D90C9BD22A3E4C8300C5A2DB /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		D90C9BD42A3E4C9400C5A2DB /* NetworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkView.swift; sourceTree = "<group>"; };
+		D90C9BD62A3E4CA300C5A2DB /* AddBlogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBlogView.swift; sourceTree = "<group>"; };
+		D90C9BD82A3E4CB600C5A2DB /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		D90C9BDA2A3E4CF100C5A2DB /* AssistantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantView.swift; sourceTree = "<group>"; };
+		D90C9BDF2A3E4D3500C5A2DB /* Elements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elements.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +116,9 @@
 		D90C9B9B2A3E34A600C5A2DB /* Everflow */ = {
 			isa = PBXGroup;
 			children = (
+				D90C9BDE2A3E4D2700C5A2DB /* Models */,
+				D90C9BCD2A3E4A5200C5A2DB /* Controllers */,
+				D90C9BC62A3E490700C5A2DB /* Views */,
 				D90C9B9C2A3E34A600C5A2DB /* EverflowApp.swift */,
 				D90C9B9E2A3E34A700C5A2DB /* ContentView.swift */,
 				D90C9BA02A3E34A800C5A2DB /* Assets.xcassets */,
@@ -125,6 +150,38 @@
 				D90C9BB92A3E34A800C5A2DB /* EverflowUITestsLaunchTests.swift */,
 			);
 			path = EverflowUITests;
+			sourceTree = "<group>";
+		};
+		D90C9BC62A3E490700C5A2DB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D90C9BC72A3E493A00C5A2DB /* Homepage.swift */,
+				D90C9BC92A3E497500C5A2DB /* SignupView.swift */,
+				D90C9BCB2A3E49B900C5A2DB /* LoginView.swift */,
+				D90C9BD02A3E4BFA00C5A2DB /* RolePageView.swift */,
+				D90C9BD22A3E4C8300C5A2DB /* UserView.swift */,
+				D90C9BD42A3E4C9400C5A2DB /* NetworkView.swift */,
+				D90C9BD62A3E4CA300C5A2DB /* AddBlogView.swift */,
+				D90C9BD82A3E4CB600C5A2DB /* SettingView.swift */,
+				D90C9BDA2A3E4CF100C5A2DB /* AssistantView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D90C9BCD2A3E4A5200C5A2DB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D90C9BCE2A3E4A8500C5A2DB /* LoginController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D90C9BDE2A3E4D2700C5A2DB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D90C9BDF2A3E4D3500C5A2DB /* Elements.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +314,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D90C9BD72A3E4CA300C5A2DB /* AddBlogView.swift in Sources */,
+				D90C9BD12A3E4BFA00C5A2DB /* RolePageView.swift in Sources */,
+				D90C9BCA2A3E497500C5A2DB /* SignupView.swift in Sources */,
+				D90C9BCF2A3E4A8500C5A2DB /* LoginController.swift in Sources */,
+				D90C9BD52A3E4C9400C5A2DB /* NetworkView.swift in Sources */,
+				D90C9BD32A3E4C8300C5A2DB /* UserView.swift in Sources */,
+				D90C9BE02A3E4D3500C5A2DB /* Elements.swift in Sources */,
+				D90C9BC82A3E493A00C5A2DB /* Homepage.swift in Sources */,
+				D90C9BDB2A3E4CF100C5A2DB /* AssistantView.swift in Sources */,
 				D90C9B9F2A3E34A700C5A2DB /* ContentView.swift in Sources */,
+				D90C9BCC2A3E49B900C5A2DB /* LoginView.swift in Sources */,
 				D90C9B9D2A3E34A600C5A2DB /* EverflowApp.swift in Sources */,
+				D90C9BD92A3E4CB600C5A2DB /* SettingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
