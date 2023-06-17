@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct RolePageView: View {
-    @State private var selection = 0
-    let tabBarIcons = ["person.crop.circle", "flag.circle", "plus.circle.fill", "checkmark.circle", "gearshape"]
+    @State private var selection = 2
+    let tabBarIcons = ["person.crop.circle", "flag.circle", "plus.circle.fill", "checkmark.circle", "person.crop.circle"]
     let tabBarLabels = ["Attributes", "Activities", "", "ToDo", "Settings"]
-    let tabBarColors: [Color] = [.red, .green, Color(red: 0.97, green: 0.70, blue: 0.37), .blue, .purple]
+    let tabBarColors: [Color] = [Color(red: 0.97, green: 0.70, blue: 0.37), Color(red: 0.97, green: 0.70, blue: 0.37), Color(red: 0.97, green: 0.70, blue: 0.37), .blue, Color(red: 0.97, green: 0.70, blue: 0.37)]
 
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
@@ -28,7 +28,7 @@ struct RolePageView: View {
             NetworkView()
                 .tag(1)
             
-            AddBlogView()
+            ChatView()
                 .tag(2)
             
             SettingView()
@@ -52,7 +52,7 @@ struct RolePageView: View {
                     }
                 }
             }
-            .frame(height: 70)
+            .frame(height: 60)
             .background(Color.white)
             .clipShape(RoundedRectangle(cornerRadius: 25))
             .padding(.horizontal, 15)

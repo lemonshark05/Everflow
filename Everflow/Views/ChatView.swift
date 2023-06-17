@@ -1,5 +1,5 @@
 //
-//  AssistantView.swift
+//  ChatView.swift
 //  Everflow
 //
 //  Created by lemonshark on 2023/6/17.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AssistantView: View {
+struct ChatView: View {
     @ObservedObject var chatController = ChatController()
     @State private var inputText: String = ""
     
@@ -39,8 +39,8 @@ struct AssistantView: View {
     }
 }
 
-struct AssistantView_Previews: PreviewProvider {
+struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
-        AssistantView()
+        ChatView()
     }
 }
