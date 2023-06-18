@@ -29,8 +29,9 @@
 		D90C9BE42A3E671800C5A2DB /* ChatAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90C9BE32A3E671800C5A2DB /* ChatAPI.swift */; };
 		D90C9BE62A3E673500C5A2DB /* Massage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90C9BE52A3E673500C5A2DB /* Massage.swift */; };
 		D90C9BE82A3E70D400C5A2DB /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90C9BE72A3E70D400C5A2DB /* ChatView.swift */; };
-		D90C9BEA2A3E70FF00C5A2DB /* ChatRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90C9BE92A3E70FF00C5A2DB /* ChatRow.swift */; };
-		D90C9BEC2A3E7C4C00C5A2DB /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = D90C9BEB2A3E7C4C00C5A2DB /* Config.plist */; };
+		D90C9BEF2A3E80FE00C5A2DB /* OpenAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = D90C9BEE2A3E80FE00C5A2DB /* OpenAIKit */; };
+		D90C9BF52A3ED96900C5A2DB /* my.env in Resources */ = {isa = PBXBuildFile; fileRef = D90C9BF42A3ED96900C5A2DB /* my.env */; };
+		D95177412A3EED140062D5A0 /* ChatGPTSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D95177402A3EED140062D5A0 /* ChatGPTSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,8 +77,7 @@
 		D90C9BE32A3E671800C5A2DB /* ChatAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAPI.swift; sourceTree = "<group>"; };
 		D90C9BE52A3E673500C5A2DB /* Massage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Massage.swift; sourceTree = "<group>"; };
 		D90C9BE72A3E70D400C5A2DB /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
-		D90C9BE92A3E70FF00C5A2DB /* ChatRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRow.swift; sourceTree = "<group>"; };
-		D90C9BEB2A3E7C4C00C5A2DB /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
+		D90C9BF42A3ED96900C5A2DB /* my.env */ = {isa = PBXFileReference; lastKnownFileType = text; path = my.env; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +85,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D95177412A3EED140062D5A0 /* ChatGPTSwift in Frameworks */,
+				D90C9BEF2A3E80FE00C5A2DB /* OpenAIKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,12 +130,12 @@
 		D90C9B9B2A3E34A600C5A2DB /* Everflow */ = {
 			isa = PBXGroup;
 			children = (
+				D90C9BF42A3ED96900C5A2DB /* my.env */,
 				D90C9BDE2A3E4D2700C5A2DB /* Models */,
 				D90C9BCD2A3E4A5200C5A2DB /* Controllers */,
 				D90C9BC62A3E490700C5A2DB /* Views */,
 				D90C9B9C2A3E34A600C5A2DB /* EverflowApp.swift */,
 				D90C9B9E2A3E34A700C5A2DB /* ContentView.swift */,
-				D90C9BEB2A3E7C4C00C5A2DB /* Config.plist */,
 				D90C9BA02A3E34A800C5A2DB /* Assets.xcassets */,
 				D90C9BA22A3E34A800C5A2DB /* Preview Content */,
 			);
@@ -178,7 +180,6 @@
 				D90C9BD82A3E4CB600C5A2DB /* SettingView.swift */,
 				D90C9BDA2A3E4CF100C5A2DB /* AssistantView.swift */,
 				D90C9BE72A3E70D400C5A2DB /* ChatView.swift */,
-				D90C9BE92A3E70FF00C5A2DB /* ChatRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -218,6 +219,10 @@
 			dependencies = (
 			);
 			name = Everflow;
+			packageProductDependencies = (
+				D90C9BEE2A3E80FE00C5A2DB /* OpenAIKit */,
+				D95177402A3EED140062D5A0 /* ChatGPTSwift */,
+			);
 			productName = Everflow;
 			productReference = D90C9B992A3E34A600C5A2DB /* Everflow.app */;
 			productType = "com.apple.product-type.application";
@@ -290,6 +295,10 @@
 				Base,
 			);
 			mainGroup = D90C9B902A3E34A600C5A2DB;
+			packageReferences = (
+				D90C9BED2A3E80FE00C5A2DB /* XCRemoteSwiftPackageReference "openai-kit" */,
+				D951773F2A3EED140062D5A0 /* XCRemoteSwiftPackageReference "ChatGPTSwift" */,
+			);
 			productRefGroup = D90C9B9A2A3E34A600C5A2DB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -306,8 +315,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D90C9BF52A3ED96900C5A2DB /* my.env in Resources */,
 				D90C9BA42A3E34A800C5A2DB /* Preview Assets.xcassets in Resources */,
-				D90C9BEC2A3E7C4C00C5A2DB /* Config.plist in Resources */,
 				D90C9BA12A3E34A800C5A2DB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,7 +346,6 @@
 				D90C9BD12A3E4BFA00C5A2DB /* RolePageView.swift in Sources */,
 				D90C9BE42A3E671800C5A2DB /* ChatAPI.swift in Sources */,
 				D90C9BCA2A3E497500C5A2DB /* SignupView.swift in Sources */,
-				D90C9BEA2A3E70FF00C5A2DB /* ChatRow.swift in Sources */,
 				D90C9BCF2A3E4A8500C5A2DB /* LoginController.swift in Sources */,
 				D90C9BD52A3E4C9400C5A2DB /* NetworkView.swift in Sources */,
 				D90C9BD32A3E4C8300C5A2DB /* UserView.swift in Sources */,
@@ -675,6 +683,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D90C9BED2A3E80FE00C5A2DB /* XCRemoteSwiftPackageReference "openai-kit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dylanshine/openai-kit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		D951773F2A3EED140062D5A0 /* XCRemoteSwiftPackageReference "ChatGPTSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alfianlosari/ChatGPTSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D90C9BEE2A3E80FE00C5A2DB /* OpenAIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D90C9BED2A3E80FE00C5A2DB /* XCRemoteSwiftPackageReference "openai-kit" */;
+			productName = OpenAIKit;
+		};
+		D95177402A3EED140062D5A0 /* ChatGPTSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D951773F2A3EED140062D5A0 /* XCRemoteSwiftPackageReference "ChatGPTSwift" */;
+			productName = ChatGPTSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D90C9B912A3E34A600C5A2DB /* Project object */;
 }

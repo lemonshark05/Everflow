@@ -19,3 +19,46 @@ enum InfoType {
     case table([String])
 }
 
+struct ChatBox {
+    let id:Int // Add a unique identifier
+    let username: String
+    let content: String
+}
+
+public struct ChatMessage: Codable, Identifiable {
+    private enum CodingKeys: String, CodingKey {
+        case role, content
+    }
+
+    /// ID used for iterating through list of chat messages
+    public var id = UUID().uuidString
+
+    /// The person sending the message
+    public let role: ChatRole
+
+    /// The message itself
+    public let content: String
+
+    public init(role: ChatRole, content: String) {
+        self.role = role
+        self.content = content
+    }
+
+    public var body: [String: String] {
+        return [
+            "role": self.role.rawValue,
+            "content": self.content
+        ]
+    }
+}
+
+public enum ChatRole: String, Codable {
+    /// The context of the chat
+    case system
+
+    /// The main user chatting
+    case user
+
+    /// The main AI chatting
+    case assistant
+}

@@ -8,6 +8,9 @@
 import Foundation
 import SwiftUI
 import Combine
+import OpenAIKit
+import NIO
+import AsyncHTTPClient
 
 class ChatController: ObservableObject {
     @Published var infos: [Information] = []
@@ -31,19 +34,49 @@ class ChatController: ObservableObject {
             }
         }
     }
-    
-    func getAPIKey() -> String? {
-        var nsDictionary: NSDictionary?
-        if let path = Bundle.main.path(forResource: "Config", ofType: "plist") {
-            nsDictionary = NSDictionary(contentsOfFile: path)
-        }
 
-        return nsDictionary?["OpenAI_API_Key"] as? String
-    }
-    
+//    func getAutoReply(inputText: String, completion: @escaping (String) -> Void) {
+//        guard let apiKey = ProcessInfo.processInfo.environment["OPENAI_API_KEY"] else {
+//            print("Failed to get API Key")
+//            return
+//        }
+//        guard let organization = ProcessInfo.processInfo.environment["OPENAI_ORGANIZATION"] else {
+//            print("Failed to get Organization")
+//            return
+//        }
+//
+//        let urlSession = URLSession(configuration: .default)
+//        let configuration = Configuration(apiKey: apiKey, organization: organization)
+//        let openAIClient = OpenAIKit.Client(session: urlSession, configuration: configuration)
+//
+//        Task {
+//            do {
+//                let response = try await openAIClient.chats.create(
+//                    model: Model.GPT3.davinci,
+//                    messages: [
+//                        ChatMessage(role: .system, content: "You are talking to ChatGPT"),
+//                        ChatMessage(role: .user, content: inputText)
+//                    ]
+//                )
+//                // Get the content of the last message from the API response, which should be the bot's reply
+//                if let botReply = response.messages.last?.content {
+//                    DispatchQueue.main.async {
+//                        completion(botReply.trimmingCharacters(in: .whitespacesAndNewlines))
+//                    }
+//                }
+//            } catch {
+//                print(error.localizedDescription)
+//            }
+//        }
+//    }
+
     func getAutoReply(inputText: String, completion: @escaping (String) -> Void) {
-        guard let apiKey = getAPIKey() else {
+        guard let apiKey = ProcessInfo.processInfo.environment["OPENAI_API_KEY"] else {
             print("Failed to get API Key")
+            return
+        }
+        guard let organization = ProcessInfo.processInfo.environment["OPENAI_ORGANIZATION"] else {
+            print("Failed to get Organization")
             return
         }
         let api = ChatGPTAPI(apiKey: apiKey)
@@ -59,4 +92,5 @@ class ChatController: ObservableObject {
             }
         }
     }
+    
 }
