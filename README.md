@@ -15,7 +15,7 @@ Everflow is a comprehensive mobile app designed to help seniors combat social is
 
 ### XMind
 
-The XMind of the app centers around its four core features: Social Events, Peer Connections, Memory Sharing, and Resource Access. These are underpinned by a user-friendly interface, multilingual support, and AI-powered recommendations tailored to individual preferences.
+
 
 ### App Evaluation
 - **Category:** Social Connectivity, Health & Fitness
@@ -29,6 +29,10 @@ The XMind of the app centers around its four core features: Social Events, Peer 
 ### DraW
 
 The initial wireframe and design of the app will be conceptualized and sketched out using DraW.
+![image](https://github.com/lemonshark05/Everflow/assets/100770743/0f981af6-e8a4-48f7-8368-abf1d41b755c)
+![image](https://github.com/lemonshark05/Everflow/assets/100770743/0824dbc8-adad-4303-93ea-a67668c03b30)
+![image](https://github.com/lemonshark05/Everflow/assets/100770743/c41d4f05-5938-4786-9dff-4b751269f1e7)
+![image](https://github.com/lemonshark05/Everflow/assets/100770743/a119ab74-9cb3-4059-b2b0-18e63ff94503)
 
 ### Interactive Prototype
 An interactive prototype will be developed to simulate the user experience, providing a practical demonstration of how the app's features and navigation will function.
