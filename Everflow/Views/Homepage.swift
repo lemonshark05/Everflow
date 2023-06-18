@@ -21,7 +21,7 @@ struct Homepage: View {
             
             VStack {
                 Spacer()
-                Image("Foodie")
+                Image("Everflow")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(maxWidth: 250, maxHeight: 250)
