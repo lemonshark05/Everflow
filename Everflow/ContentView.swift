@@ -10,8 +10,8 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationView {
-//            Homepage()
-            ChatView()
+            Homepage()
+//            ChatView()
         }
     }
 }

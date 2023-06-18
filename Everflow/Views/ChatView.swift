@@ -12,11 +12,11 @@ struct ChatView: View {
     @State private var inputText: String = ""
     let currentUser: String = "Ann"
 
-    @State private var isActionSheetPresented = false
+    @State private var isSheetPresented = false
     
     @State private var messages = [
         ChatBox(id: 0, username: "Jane", content: "Hello, everyone!"),
-        ChatBox(id: 1, username: "Ann", content: "Hi, Jane! Ready for the hackathon?"),
+        ChatBox(id: 1, username: "Ann", content: "Hi, Ready for the hackathon?"),
         ChatBox(id: 2, username: "Kaven", content: "Hello all! Yes, excited for the event."),
         ChatBox(id: 3, username: "Ann", content: "Definitely! I've got a lot of ideas."),
         ChatBox(id: 4, username: "Kaven", content: "Great, let's brainstorm together to find out the project we want to do the most! "),
@@ -24,9 +24,9 @@ struct ChatView: View {
     ]
     
     let fakeGpt = [
-        "Kaven, I absolutely agree with your suggestion to brainstorm together - let's harness our collective creativity and find the perfect project that excites us all!",
-        "I couldn't agree more, Kaven! Collaborative brainstorming is key to uncovering our best ideas and selecting the project that truly ignites our passion for the hackathon.",
-        "You're absolutely right, Kaven! By joining forces and pooling our ideas, we can discover the project that resonates with all of us and maximize our chances of success in the hackathon."
+        "Kaven, I absolutely agree with your suggestion to brainstorm together!",
+        "I couldn't agree more, Kaven! Collaborative brainstorming is key to uncovering our best ideas for the hackathon.",
+        "You're absolutely right, Kaven! By joining forces and pooling our ideas, we can maximize our chances of success in the hackathon."
     ]
     
     var body: some View {
@@ -45,7 +45,7 @@ struct ChatView: View {
                         ForEach(messages.indices, id: \.self) { index in
                             withAnimation(Animation.spring().delay(Double(index) * 0.5)) {
                                 MessageRow(message: messages[index], currentUser: currentUser)
-                                    .transition(AnyTransition.asymmetric(insertion: .scale, removal: .opacity))
+                                    .transition(AnyTransition.asymmetric(insertion: .scale, removal: .opacity)).id(index)
                             }
                         }
                     }
@@ -53,43 +53,67 @@ struct ChatView: View {
             }
             Spacer()
             // Input field and send button
+            TextView(text: $inputText)
             HStack {
-                TextField("Type a message...", text: $inputText)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding(.leading)
-                
+//                TextField("Type a message...", text: $inputText)
+//                    .textFieldStyle(RoundedBorderTextFieldStyle())
+//                    .padding(.leading)
                 Button(action: {
                     let newMessage = ChatBox(id: messages.count, username: currentUser, content: inputText)
                     messages.append(newMessage)
                     inputText = ""
                 }) {
                     Text("Send")
-                        .padding()
+                        .padding(10)
                         .background(Color(red: 1, green: 0.79, blue: 0.48))
                         .foregroundColor(.white)
                         .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                 }
                 
                 Button(action: {
-                    isActionSheetPresented = true
+                    isSheetPresented = true
                 }) {
                     Text("GPT")
-                        .padding()
+                        .padding(10)
                         .background(.green)
                         .foregroundColor(.white)
                         .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                 }
             }
-            .offset(y: -20)
             
             Spacer()
         }
         .background(Color(red: 1, green: 0.97, blue: 0.88))
         .ignoresSafeArea()
-        .actionSheet(isPresented: $isActionSheetPresented) {
-            ActionSheet(title: Text("Choose a suggestion"), buttons: fakeGpt.map { suggestion in
-                .default(Text(suggestion)) { inputText = suggestion }
-            } + [.cancel()])
+        .sheet(isPresented: $isSheetPresented) {
+            NavigationView {
+                    VStack {
+                        ScrollView {
+                            ForEach(fakeGpt, id: \.self) { suggestion in
+                                Text(suggestion)
+                                    .font(.title2) // You can adjust this to your needs
+                                    .padding()
+                                    .frame(maxWidth: .infinity)
+                                    .background(Color.white)
+                                    .cornerRadius(8)
+                                    .shadow(radius: 4)
+                                    .padding(.horizontal)
+                                    .onTapGesture {
+                                        inputText = suggestion
+                                        isSheetPresented = false
+                                    }
+                            }
+                        }
+                        Spacer()
+                    }
+                    .navigationBarTitle("GPT Suggestions", displayMode: .inline)
+                    .navigationBarItems(trailing: Button("Cancel") {
+                        isSheetPresented = false
+                    })
+                    .padding()
+                }
+                .background(Color(red: 0.95, green: 0.95, blue: 0.97))
+            
         }
     }
 }
@@ -97,6 +121,29 @@ struct ChatView: View {
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
         ChatView()
+    }
+}
+
+struct TextView: View {
+    @Binding var text: String
+
+    var body: some View {
+        GeometryReader { geometry in
+            ScrollView(showsIndicators: false) {
+                ZStack(alignment: .topLeading) {
+                    if text.isEmpty {
+                        Text("Type a message...")
+                            .foregroundColor(.gray)
+                            .padding(.horizontal)
+                    }
+
+                    TextEditor(text: $text)
+                        .padding(.leading)
+                }
+                .frame(width: geometry.size.width, height: geometry.size.height, alignment: .topLeading)
+            }
+        }
+        .frame(height: 60)
     }
 }
 
